@@ -5,5 +5,5 @@ RUN apk add --no-cache \
 
 ADD . /app/
 WORKDIR /app
-RUN make demo
+RUN CGO_ENABLED=0 go build
 CMD ["/app/demo"]
